@@ -1,0 +1,45 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./scripts/build",
+    "dev": "live-server ./public",
+    "serveProd": "NODE_ENV=production node ./server/index.js",
+    "serveDev": "NODE_ENV=development node ./server/index.js",
+    "newPost": "node ./newPost.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knrdhz/personalspace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knrdhz/personalspace/issues"
+  },
+  "homepage": "https://github.com/knrdhz/personalspace#readme",
+  "devDependencies": {
+    "chokidar": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "front-matter": "^3.0.2",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
+    "helmet": "^3.21.2",
+    "live-server": "^1.2.1",
+    "marked": "^0.7.0",
+    "minimist": "^1.2.5",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.18.2",
+    "serve": "^11.1.0"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "rss": "^1.2.2"
+  }
+}

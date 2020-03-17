@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="stylesheet" href="../../../../../assets/styles.css" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../../../assets/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= articleTitle %></title>
+	<link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+	<link href="../../../../../assets/prism.css" rel="stylesheet" />
+</head>
+<body>
+<section class="pageHeader">
+  <a href="/" class="btnMenu">Home</a>
+  <a href="/about" class="btnMenu">About</a>
+  <a href="/contact" class="btnMenu">Contact</a>
+</section>
+
+<section class="main-content">
+	<h1><%- headlineTitle %></h1>
+	<h4><%- articleDate %></h4>
+	<hr>
+	<%- body %>
+  <p>
+  <a href="<%= site.basePath %>/" class="btn">Back to main page</a>
+</section>
+<script src="../../../../../assets/prism.js"></script>
+</body>
+</html>
