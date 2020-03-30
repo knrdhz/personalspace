@@ -13,14 +13,13 @@
 }
 
 body {
-  font-family: 'Heebo', sans-serif;
-  line-height: 1.6;
-  color: var(--main-color);
-  max-width: 40rem;
-  padding: 2rem;
-  margin: auto;
-  background: var(--main-bg-color);
-  font-weight: 200;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;  line-height: 1.6;
+	color: var(--main-color);
+	max-width: 40rem;
+	padding: 2rem;
+	margin: auto;
+	background: var(--main-bg-color);
+	font-weight: 200;
 }
 
 h1 {
@@ -46,7 +45,7 @@ h4 {
 h3 {
 	text-align: left;
 	font-weight: 100;
-	color: var(--highlight-color) !important;
+	color: var(--headline-color) !important;
 }
 
 hr {
@@ -54,7 +53,7 @@ hr {
 }
 
 a {
-	color: var(--headline-color);
+	color: var(--highlight-color);
 	font-weight: 600;
 	text-align: left;
 	text-decoration: none;
