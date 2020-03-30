@@ -17,7 +17,7 @@ machines.
 
 Here's my take on understanding it's history, purpose and the way it works.
 
-### Beginnings
+## Beginnings
 
 Before the arrival of SSH, computer scientists could take advantage of many
 tools that were providing the basic functionality - connecting to a remote
@@ -43,7 +43,7 @@ arrival of millions of the Internet users, unencrypted data flying between a
 server (we're talking about logins and passwords after all) was a no-go for
 many specialists and scientists.
 
-### Comes Tatu Ylönen
+## Comes Tatu Ylönen
 
 1995, Helsinki. A researcher gets angry about a password-sniffing attack
 conducted at his University of Technology and decides to find a solution to the
@@ -58,7 +58,7 @@ improvements forced the creators to implement [Diffie-Hellman key
 exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
 and enforced authentication on both ends.
 
-### How does it work?
+## How does it work?
 
 We have cleared the way and briefly answered the "why?" of SSH protocol. Now
 it's time to get to the "how" part. What's under the hood of a simple `ssh`
