@@ -54,7 +54,7 @@ hr {
 }
 
 a {
-	color: var(--main-color);
+	color: var(--headline-color);
 	font-weight: 600;
 	text-align: left;
 	text-decoration: none;
