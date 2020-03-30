@@ -1,4 +1,12 @@
-# Understanding SSH
+---
+title: Understanding SSH - part one: History and overview
+date: 2020-03-30
+tags:
+  - web
+  - history
+  - protocols
+layout: layout
+---
 
 SSH, or Secure Shell, is an internet protocol that many of developers consider
 as a natural part of their workflow. It helps to **securely** connect two
@@ -35,7 +43,7 @@ arrival of millions of the Internet users, unencrypted data flying between a
 server (we're talking about logins and passwords after all) was a no-go for
 many specialists and scientists.
 
-**Comes Tatu Ylönen**
+### Comes Tatu Ylönen
 
 1995, Helsinki. A researcher gets angry about a password-sniffing attack
 conducted at his University of Technology and decides to find a solution to the

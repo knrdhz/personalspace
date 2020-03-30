@@ -39,7 +39,7 @@
     "serve": "^11.1.0"
   },
   "dependencies": {
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^0.5.4",
     "rss": "^1.2.2"
   }
 }
