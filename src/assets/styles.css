@@ -44,9 +44,9 @@ h4 {
 }
 
 h3 {
-	text-align: left,
+	text-align: left;
 	font-weight: 100;
-	color: var(-highlight-color) !important;
+	color: var(--highlight-color) !important;
 }
 
 hr {
