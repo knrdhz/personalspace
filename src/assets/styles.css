@@ -10,6 +10,7 @@
 	--main-color: #94a1b2;
 	--highlight-color: #7f5af0;
 	--headline-color: #fffffe;
+	--code-bg-color: #24242b;
 }
 
 body {
@@ -90,9 +91,9 @@ code {
 }
 
 pre {
-	background-color: var(--main-bg-color);
-	border-radius: 5px 5px 5px 5px;
-	border: 1px solid var(--highlight-color);
+	background-color: var(--code-bg-color) !important;
+	border-bottom: 3px solid var(--highlight-color);
+	border-right: 3px solid var(--highlight-color);
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: auto;
