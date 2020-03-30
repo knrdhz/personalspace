@@ -1,5 +1,5 @@
 ---
-title: Understanding SSH - part one: History and overview
+title: Understanding SSH Part One - History and overview
 date: 2020-03-30
 tags:
   - web
