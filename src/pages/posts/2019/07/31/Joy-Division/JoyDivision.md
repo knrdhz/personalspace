@@ -2,9 +2,8 @@
 title: Joy Division
 date: 2019-07-31
 tags:
-  - generative
-  - art
-  - programming
+- Generative
+- Art
 layout: layout
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: Bubble Sort in JavaScript
 date: 2020-03-05
-tags: 
-	- webdev
+tags:
+- JavaScript
+- Web development
 layout: layout
 ---
 

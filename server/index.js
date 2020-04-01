@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
     res.send(path.join(__dirname, '../public'))
 })
 app.get('/feed', (req, res) => {
+    console.log('Feed is here')
     const filepath = path.join(__dirname, '../public/rss.xml')
     fs.readFile(filepath, function(err, data) {
         if (err) {

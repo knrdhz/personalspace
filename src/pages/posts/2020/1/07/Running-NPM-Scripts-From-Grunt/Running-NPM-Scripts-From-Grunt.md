@@ -1,9 +1,7 @@
 ---
 title: Running NPM scripts from Grunt
 date:  2020-01-07
-tags:
-  - webdev
-  - tutorial
+category: JavaScript
 layout: layout
 ---
 

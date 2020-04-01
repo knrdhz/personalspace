@@ -13,3 +13,4 @@ found, you hipster:
 
 - GitHub: [knrdhz](https://github.com/knrdhz)
 - Twitter: [@knrdhz](https://twitter.com/knrdhz)
+- Feed: [RSS](https://www.knrdhz.me/rss.xml)

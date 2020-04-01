@@ -46,6 +46,7 @@ files
             const pageData = frontMatter(data)
             const attributes = pageData.attributes
             const title = attributes.title
+            const category = attributes.category
             const date = new Date(attributes.date)
             const options = { day: '2-digit', month: '2-digit' }
 
@@ -66,7 +67,7 @@ files
             }
 
             let headline =
-                `<h3><a href="${link}">` + title + '</a> <span id="headlineDate">' + date.toLocaleDateString('en-GB', options) + '</span></h3>\n'
+                `<h3><a href="${link}"> ${title} ` + '</a> <span id="headlineDate">' + date.toLocaleDateString('en-GB', options) + '</span></h3>\n'
             headlines += headline
         }
     })
@@ -122,6 +123,16 @@ files.forEach((file, i) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     const articleDate = date.toLocaleDateString('en-US', options)
 
+    // get post category
+
+    const articleTags = pageData.attributes.tags
+    let formattedArticleTags = ''
+    if (articleTags) {
+        articleTags.forEach((tag, i) => {
+            formattedArticleTags = formattedArticleTags + `<div class="tag">${tag}</div>`
+        })
+    }
+
     const completePage = ejs.render(
         layoutData,
         Object.assign({}, templateConfig, {
@@ -131,7 +142,8 @@ files.forEach((file, i) => {
             filename: layoutFileName,
             articleTitle: pageData.attributes.title + ' ' + config.site.title,
             headlineTitle: pageData.attributes.title,
-            articleDate: articleDate
+            articleDate: articleDate,
+            tags: formattedArticleTags
         })
     )
 

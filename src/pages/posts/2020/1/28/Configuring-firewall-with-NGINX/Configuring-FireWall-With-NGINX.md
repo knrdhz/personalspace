@@ -2,8 +2,8 @@
 title: Configuring firewall and NGINX
 date:  2020-01-28
 tags:
-  - webdev
-  - tutorial
+- Tutorial
+- Backend
 layout: layout
 ---
 

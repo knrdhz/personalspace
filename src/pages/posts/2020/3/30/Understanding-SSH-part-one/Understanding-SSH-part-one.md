@@ -2,9 +2,8 @@
 title: Understanding SSH - History and overview
 date: 2020-03-30
 tags:
-  - web
-  - history
-  - protocols
+- Web
+- Internet history
 layout: layout
 ---
 

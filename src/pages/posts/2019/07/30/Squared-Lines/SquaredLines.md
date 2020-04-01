@@ -1,10 +1,9 @@
 ---
 title: Squared Lines
 date: 2019-07-30
-tags:
-  - generative
-  - art
-  - programming
+tags: 
+- Generative
+- Art
 layout: layout
 ---
 
