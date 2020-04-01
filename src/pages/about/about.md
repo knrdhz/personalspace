@@ -3,7 +3,7 @@ title: About
 layout: about
 ---
 
-I'm Konrad Hyży and I am a self-taught web developer.
+I'm **Konrad Hyży** and I am a self-taught web developer.
 
 ## Blog
 
