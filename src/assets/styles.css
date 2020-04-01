@@ -34,7 +34,13 @@ h2 {
 	text-align: left;
 	font-size: 30;
 	color: var(--headline-color);
-	font-weight: 700;
+	font-weight: 400;
+}
+
+h3 {
+	text-align: left;
+	font-weight: 100;
+	color: var(--headline-color);
 }
 
 h4 {
@@ -43,11 +49,6 @@ h4 {
 	font-weight: 100;
 }
 
-h3 {
-	text-align: left;
-	font-weight: 100;
-	color: var(--headline-color) !important;
-}
 
 hr {
 	color: var(--main-color);
@@ -55,15 +56,15 @@ hr {
 
 a {
 	color: var(--highlight-color);
-	font-weight: 600;
+	font-weight: 400;
 	text-align: left;
 	text-decoration: none;
-	border-bottom: 1px dashed var(--main-color);
 	margin-bottom: 0;
+	transition: 0.3s;
 }
 
 a:hover {
-	border-bottom: 1px dashed var(--headline-color);
+	border-bottom: 1px solid var(--headline-color);
 }
 
 #headlineDate {
