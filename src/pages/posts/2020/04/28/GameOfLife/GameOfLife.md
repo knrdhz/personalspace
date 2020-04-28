@@ -17,6 +17,7 @@ style: GameOfLife.css
 	<div id="cellContainer"></div>
 </div>
 
+Here's a basic (and highly inefficient) implementation by [John Conway](https://en.wikipedia.org/wiki/John_Horton_Conway)'s **Game of Life**. It has been done to honour this great mathematician who passed away earlier this month.
 <script>
 const grid = {};
 let cellRows;
