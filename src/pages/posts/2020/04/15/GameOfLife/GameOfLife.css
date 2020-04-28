@@ -1,0 +1,39 @@
+#cellContainer {
+	height: 200px;
+	width: 200px;
+	border: 1px solid #111;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 10px);
+	grid-template-rows: repeat(auto-fit, 10px);
+}
+
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+	text-align: center;
+}
+
+button {
+	background-color: var(--code-bg-color);
+    border: 0;
+	border-radius: 3px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--headline-color);
+	cursor: pointer;
+}
+
+.dead { 
+	background-color: var(--highlight-color);
+}
+
+.alive { 
+	background-color: var(--main-bg-color);
+}
+
+.cell:hover {
+	background-color: #111;
+}

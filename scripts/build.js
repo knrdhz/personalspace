@@ -26,7 +26,7 @@ fse.emptyDirSync(distPath)
 fse.copy(`${srcPath}/assets`, `${distPath}/assets`)
 
 // read pages
-const files = glob.sync('**/*.@(md|ejs|html)', { cwd: `${srcPath}/pages` })
+const files = glob.sync('**/*.@(md|ejs|html|css)', { cwd: `${srcPath}/pages` })
 
 // keep article list
 let headlines = ''
@@ -97,12 +97,14 @@ files.forEach((file, i) => {
         case '.ejs':
             pageContent = pageData.body
             break
+        case '.css':
+            pageContent = pageData.body
+            break
         default:
             pageContent = pageData.body
     }
 
     /* Date is only present on the articles - the About and Contact pages won't be taken into account */
-
     if (pageData.attributes.date) {
         let rssArticle = {}
         rssArticle.title = pageData.attributes.title
@@ -132,6 +134,12 @@ files.forEach((file, i) => {
             formattedArticleTags = formattedArticleTags + `<div class="tag">${tag}</div>`
         })
     }
+    /* Adding special styles for certain articles */
+    let specialStyle = null
+    if (pageData.attributes.style) {
+        specialStyle = './' + pageData.attributes.style
+        console.log(specialStyle)
+    }
 
     const completePage = ejs.render(
         layoutData,
@@ -143,12 +151,18 @@ files.forEach((file, i) => {
             articleTitle: pageData.attributes.title + ' ' + config.site.title,
             headlineTitle: pageData.attributes.title,
             articleDate: articleDate,
-            tags: formattedArticleTags
+            tags: formattedArticleTags,
+            specialStyle: specialStyle
         })
     )
 
     // save the html file
-    fse.writeFileSync(`${destPath}/index.html`, completePage)
+    if (fileData.ext !== '.css') {
+        fse.writeFileSync(`${destPath}/index.html`, completePage)
+    } else {
+        console.log(fileData.base)
+        fse.copyFileSync(`src/pages/${file}`, `${destPath}/${fileData.base}`)
+    }
 })
 
 console.log('\n\n\n*** B U I L D   D O N E ***')
