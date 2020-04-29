@@ -5,6 +5,8 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 10px);
 	grid-template-rows: repeat(auto-fit, 10px);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #container {

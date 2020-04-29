@@ -11,13 +11,27 @@ style: GameOfLife.css
 <div id="container">
 	<button id="startButton">Start</button>
 	<button id="pauseButton">Pause</button>
+	<button id="nextGeneration">Next generation</button>
 	<br>
 	<span id="generationNumber">Generation: 0</span>
 	<br>
 	<div id="cellContainer"></div>
 </div>
 
-Here's a basic (and highly inefficient) implementation by [John Conway](https://en.wikipedia.org/wiki/John_Horton_Conway)'s **Game of Life**. It has been done to honour this great mathematician who passed away earlier this month.
+Earlier this month a great mathematician [John Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) passed away due to COVID-19. Since few months (years) I wanted to implement his famous Game of Life. It is a cellular automation that is based on the initial state (therefore it's called a zero-player game). Here's a quick recap of the rules:
+- It takes place on an infinite 2D grid
+- Each square represents a cell
+- Each cell can represent one of two states: alive or dead
+
+Now, the lifecycle of the cells is defined by strict rules that define whether it will survive the next turn (generation). They are quite simple but provide the game with unexpected results and shapes. I will just copy-paste them here from [Game of Life Wikipedia page](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life):
+
+1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+2. Any live cell with two or three live neighbours lives on to the next generation.
+3. Any live cell with more than three live neighbours dies, as if by overpopulation.
+4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
+Here's a basic (and highly inefficient) implementation of Conways's **Game of Life**. It is based on a grid of divs representing the cells. It is surprisingly small, as in this particular implementation each generation starts with a thorough check of every single cell (and there are 400 of them!). Click some squares to make the cells 'alive' and press the start button. 
+
 <script>
 const grid = {};
 let cellRows;
@@ -34,7 +48,6 @@ function startGame() {
   console.log("Game Started");
   paused = false;
   let interval = setInterval(nextGeneration, 1);
-  generationCounter = document.getElementById("generationNumber");
 }
 
 function pauseGame() {
@@ -66,6 +79,12 @@ function nextGeneration() {
 
   generationNumber = generationNumber + 1;
   generationCounter.innerHTML = `Generation: ${generationNumber}`;
+}
+
+function manualNextGeneration() {
+	paused = false;
+	nextGeneration();
+	paused = true;
 }
 
 function onClickActivateCell(event) {
@@ -118,6 +137,7 @@ function checkNeighbors(j, i) {
 
 /* Generate cells */
 window.addEventListener("DOMContentLoaded", () => {
+  generationCounter = document.getElementById("generationNumber");
   const container = document.getElementById("cellContainer");
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -152,9 +172,14 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
   document
     .getElementById("startButton")
     .addEventListener("click", startGame, false);
+
+  document
+    .getElementById("nextGeneration")
+    .addEventListener("click", manualNextGeneration, false);
 
   document
     .getElementById("pauseButton")
