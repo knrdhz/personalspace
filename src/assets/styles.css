@@ -34,13 +34,13 @@ h2 {
 	text-align: left;
 	font-size: 30;
 	color: var(--headline-color);
-	font-weight: 400;
+	font-weight: 100;
 }
 
 h3 {
 	text-align: left;
 	font-weight: 100;
-	color: var(--headline-color);
+	color: var(--main-color);
 }
 
 h4 {
@@ -55,8 +55,8 @@ hr {
 }
 
 a {
-	color: var(--highlight-color);
-	font-weight: 400;
+	color: var(--headline-color);
+	font-weight: 900;
 	text-align: left;
 	text-decoration: none;
 	margin-bottom: 0;
@@ -120,7 +120,7 @@ pre {
 	overflow-y: auto;
 }
 
-.btnMenu {
+.purple {
 	margin-left: 20px;
 	color: var(--highlight-color)
 }
