@@ -17,7 +17,7 @@ jobs:
         passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
-        key: ${{ secrets.SSHKEY }}
+        key: ${{ secrets.KEY }}
         source: "."
         target: "home/pi/blog/"
 
@@ -28,5 +28,5 @@ jobs:
         passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        KEY: ${{ secrets.KEY }}
         script: npm run build
