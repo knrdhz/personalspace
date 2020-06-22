@@ -19,12 +19,13 @@ jobs:
         KEY: ${{ secrets.KEY }}
       with:
         source: "."
-        target: "/blog/"
+        target: "home/pi/blog/"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
+        passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
