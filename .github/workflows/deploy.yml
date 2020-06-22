@@ -30,4 +30,8 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         target: "home/pi/blog/"
-        script: npm run build
+        script: |
+            cd ~/blog
+            npm install
+            npm run build
+
