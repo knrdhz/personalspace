@@ -8,7 +8,7 @@ const glob = require('glob')
 const config = require('../site.config')
 const RSS = require('rss')
 
-const srcPath = './src'
+const srcPath = config.build.srcPath
 const distPath = config.build.outputPath
 
 const feed = new RSS({
@@ -50,7 +50,7 @@ files
             const date = new Date(attributes.date)
             const options = { day: '2-digit', month: '2-digit' }
 
-            if (title == 'About' || title == 'Contact') {
+            if (title == '/projects' || title == '/contact') {
                 return
             }
 

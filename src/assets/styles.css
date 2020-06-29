@@ -8,9 +8,10 @@
 :root {
 	--main-bg-color: #16161a;
 	--main-color: #94a1b2;
-	--highlight-color: #7f5af0;
+	--highlight-color: #2cb67d;
 	--headline-color: #fffffe;
 	--code-bg-color: #24242b;
+	--secondary-color: #72757e;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
 }
 
 h1 {
-	text-align: center;
+	text-align: left;
 	font-size: 50px;
 	font-weight: 700;
 	margin-bottom: 0;
@@ -68,7 +69,7 @@ a:hover {
 
 
 #headlineDate {
-	color: var(--headline-color)
+	color: var(--highlight-color)
 }
 
 .tagsWrapper {
@@ -126,5 +127,5 @@ pre {
 }
 
 .pageHeader {
-	text-align: center;
+	text-align: left;
 }

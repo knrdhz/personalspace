@@ -1,6 +1,6 @@
 ---
-title: Contact
-layout: about
+title: /contact
+layout: special
 ---
 
 ### hello@knrdhz.me
