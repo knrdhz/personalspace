@@ -50,7 +50,7 @@ files
             const date = new Date(attributes.date)
             const options = { day: '2-digit', month: '2-digit' }
 
-            if (title == '/projects' || title == '/contact') {
+            if (title == 'projects' || title == 'contact') {
                 return
             }
 
@@ -148,7 +148,7 @@ files.forEach((file, i) => {
             common: pageContent,
             headlines: headlines,
             filename: layoutFileName,
-            articleTitle: pageData.attributes.title + ' ' + config.site.title,
+            articleTitle: config.site.title + '/' + pageData.attributes.title,
             headlineTitle: pageData.attributes.title,
             articleDate: articleDate,
             tags: formattedArticleTags,
