@@ -27,7 +27,7 @@ jobs:
         passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
-        ssh-key: ${{ secrets.KEY }}
+        key: ${{ secrets.KEY }}
         script: |
             cd ~/blog
             git pull
