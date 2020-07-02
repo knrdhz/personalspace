@@ -50,7 +50,7 @@ files
             const date = new Date(attributes.date)
             const options = { day: '2-digit', month: '2-digit' }
 
-            if (title == 'projects' || title == 'contact') {
+            if (title == 'projects' || title == 'contact' || title == 'idea_dump') {
                 return
             }
 
