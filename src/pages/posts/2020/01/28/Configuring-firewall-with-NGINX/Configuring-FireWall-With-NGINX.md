@@ -1,5 +1,5 @@
 ---
-title: Configuring firewall and NGINX
+title: Configuring firewall with NGINX
 date:  2020-01-28
 tags:
 - Tutorial
