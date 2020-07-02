@@ -141,10 +141,21 @@ files.forEach((file, i) => {
         console.log(specialStyle)
     }
 
+    /* Generate menu header */
+    const menuHeader = `
+		<section class="pageHeader">
+		  <a href="/" class="green">/knrdhz</a>
+		  <a href="/projects" class="green">/projects</a>
+		  <a href="/idea-dump" class="green">/idea_dump</a>
+		  <a href="/contact" class="green">/contact</a>
+		</section>
+		`
+
     const completePage = ejs.render(
         layoutData,
         Object.assign({}, templateConfig, {
             body: pageContent,
+            menuHeader: menuHeader,
             common: pageContent,
             headlines: headlines,
             filename: layoutFileName,

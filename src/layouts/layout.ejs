@@ -9,12 +9,7 @@
 	<link href="<%= specialStyle %>" rel="stylesheet" />
 </head>
 <body>
-<section class="pageHeader">
-  <a href="/" class="purple">/knrdhz</a>
-  <a href="/projects" class="purple">/projects</a>
-  <a href="/contact" class="purple">/contact</a>
-</section>
-
+	<%- menuHeader %>
 <section class="main-content">
 	<h1><%- headlineTitle %></h1>
 	<h4><%- articleDate %></h4>
@@ -27,5 +22,8 @@
   <a class="purple" href="<%= site.basePath %>/" class="btn">Back to main page</a>
 </section>
 <script src="../../../../../assets/prism.js"></script>
+<script>
+	console.log('Hello, World!')
+</script>
 </body>
 </html>

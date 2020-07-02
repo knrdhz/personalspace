@@ -5,7 +5,7 @@ tags:
 - Generative
 - Algorithms
 layout: layout
-style: GameOfLife.css
+style: game-of-life.css
 ---
 
 <div id="container">
