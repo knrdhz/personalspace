@@ -24,6 +24,7 @@ fse.emptyDirSync(distPath)
 
 // copy assets folder
 fse.copy(`${srcPath}/assets`, `${distPath}/assets`)
+fse.copy(`${srcPath}/assets/_redirects`, `${distPath}/_redirects`)
 
 // read pages
 const files = glob.sync('**/*.@(md|ejs|html|css)', { cwd: `${srcPath}/pages` })
@@ -111,8 +112,8 @@ files.forEach((file, i) => {
         rssArticle.date = pageData.attributes.date
         rssArticle.url = 'https://knrdhz.me/' + file.slice(0, file.lastIndexOf('/'))
         rssArticle.author = 'Konrad Hyzy'
-        rssArticle.description = pageContent.substring(3, 70) + '...'
-        rssItems.push(rssArticle)
+        rssArticle.description = pageContent.substring(3, 500) + '...'
+        rssItems.unshift(rssArticle)
     }
 
     // render layout with page contents
