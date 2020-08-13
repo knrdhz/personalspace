@@ -1,7 +1,16 @@
+---
+title: Quick Sort in JavaScript
+date: 2020-08-13
+tags:
+- JavaScript
+- Web development
+layout: layout
+---
+
 This article is a part of the series of posts that will explain on how to implement the basic algorithms in JavaScript. It is nothing more than a challenge I set up for myself that would help me understand better the basic logic behind the most famous recipes used in Computer Science field.
 
 
-Today I'm going to be looking at one of the most famous algorithms out there -Quick Sort. It rose up to its popularity as a recurring theme of various interview stories, actually it has became a meme in certain circles (as in "Youngsters nowadays would rather post their pictures on Instagram, but when you ask them to present a simple quick sort nobody answers").
+Today I'm going to be looking at one of the most famous algorithms out there -Quick Sort. It rose up to its popularity as a recurring theme of various interview stories, actually it has became a meme in certain circles (as in "Youngsters nowadays would keenly post their pictures on Instagram, but when you ask them to present a simple quick sort nobody answers").
 
 So let's get to it. As always with sorting algorithms, we start off with some random array and a task: you need to put all the elements in order:
 
@@ -114,7 +123,7 @@ As we can see, our list becomes more and more sorted. If we recursively repeat t
 Now, how does this method look like when we implement it in JavaScript?
 
 ```javascript
-const arr = [3, 2, 4, 1, 5];
+const arr = [9, 7, 3, 1, 4, 2, 6, 5, 8, 19];
 
 function quickSort(arr) {
     /* Array has one element, nothing to do here */
