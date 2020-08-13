@@ -14,109 +14,82 @@ Today I'm going to be looking at one of the most famous algorithms out there -Qu
 
 So let's get to it. As always with sorting algorithms, we start off with some random array and a task: you need to put all the elements in order:
 
-`
-+---+---+---+---+---+---+---+---+---+---+
+```bash
 | 9 | 7 | 3 | 1 | 4 | 2 | 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
-`
+```
 *Quick Sort* method involves a concept of a pivot: a randomly picked element of an array that is to be sorted. In our example, let's pick (as said, completely randomly!) the number **4** as it's in the middle, more or less.
 
 Then we need to walk through the array from both sides - left to right and right to left and swap the elements which are out of order. What's our 'order' in this context? Every element less than 4 should be before every element greater than 4. Easy!
 
-`
+```bash
 higher than 4                 higher than 4
-  |				pivot				  |
-  |				  |                   |
-+---+---+---+---+---+---+---+---+---+----+
+  |             pivot                 |
+  |               |                   |
 |(9)| 7 | 3 | 1 |[4]| 2 | 6 | 5 | 8 |(19)|
-+---+---+---+---+---+---+---+---+---+----+
-`
+```
 
 Well, not in this case: we start off with two elements that should be on the right-hand side of our pivot. What do we do in this situation? We leave 19 where it is at the moment and look for an element that could be swapped with 9:
 
-`
+```bash
 higher than 4       we can swap this!
-  |				      |
-  |		              |   x   x   x   x
-+---+---+---+---+---+---+---+---+---+---+
+  |                   |
+  |                   |   x   x   x   x
 |(9)| 7 | 3 | 1 |[4]|(2)| 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
-`
+```
 
 After burning through 8, 5 and 6 we finally find 2 which can be swapped with 9! Here's our array now:
 
-`
-+---+---+---+---+---+---+---+---+---+---+
+```bash
 | 2 | 7 | 3 | 1 |[4]| 9 | 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
-`
+```
 We continue with our search now for the elements that should be swapped.
 
-`
+```bash
     can we swap it?
       |          yes we can!           
 	  |           |
-+---+---+---+---+---+---+---+---+---+---+
 | 2 | 7 | 3 | 1 |[4]| 9 | 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
 
-`
+```
 And in the last move we leave 3 and 1 as they are: both are smaller than 4, so there's no need to swap them.
 
-`
+```bash
       can't swap them
           |   |
           |   |
-+---+---+---+---+---+---+---+---+---+---+
 | 2 |[4]| 3 | 1 | 7 | 9 | 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
-`
+```
 We end up with an array divided in two parts: elements smaller (or equal to) and higher than the pivot:
 
-`
-                |
-  smaller       |         higher
-+---+---+---+---+---+---+---+---+---+---+
+```bash
+smaller         |            higher
 | 2 |[4]| 3 | 1 | 7 | 9 | 6 | 5 | 8 | 19|
-+---+---+---+---+---+---+---+---+---+---+
-		     	|
-`
+                |
+```
 
 Now we need to perform exactly the same quick sort algorithm on each of those parts. We pick up a random element that will serve as a pivot and continue swapping the elements. Let's look at the example of the 'smaller than 4' part:
-`
+```bash
 		 swap   swap
-	  x   |       |
-	+---+---+---+---+
+        x   |       |
 1:	| 2 | 4 |[3]| 1 |
-	+---+---+---+---+
 
-	+---+---+---+---+
 2:	| 2 | 1 |[3]| 4 |
-	+---+---+---+---+
 
         x <= 3  | x > 3
-	+---+---+---+---+
 3:	| 2 | 1 | 3 | 4 |
-	+---+---+---+---+
 				|
-`
+```
 
 In just three steps we came to the situation where the subarray is divided into two smaller arrays. Let's finish the job for the sake of completeness, knowing that the 'higher than 3' array has only one element: it's already sorted:
-`
-	+---+---+---+
+```bash
 1:	|[2]| 1 | 3 |
-	+---+---+---+
 
 	swap swap
-	  |   |   x
-	+---+---+---+
+	    |   |   x
 2:	|[2]| 1 | 3 |
-	+---+---+---+
 
-	+---+---+---+
 3:	| 1 | 2 | 3 |
-	+---+---+---+
-`
+```
 
 As we can see, our list becomes more and more sorted. If we recursively repeat those steps, we will eventually get to the mini-arrays of size of 1 which are going to be in perfect order. We just need to reassemble them into the original-size array and voilà - our job here is done.
 
