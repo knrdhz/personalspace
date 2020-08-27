@@ -29,6 +29,7 @@ h1 {
 	font-size: 50px;
 	font-weight: 700;
 	margin-bottom: 0;
+	margin-top: 0;
 	color: var(--headline-color);
 }
 h2 {
@@ -67,6 +68,23 @@ a:hover {
 	border-bottom: 1px solid var(--headline-color);
 }
 
+footer {
+	text-align: right;
+	margin-top: 50px;
+}
+
+
+.footerLink {
+	color: var(--main-color);
+	font-weight: 300;
+}
+
+#introduction {
+	border-left: 1px solid var(--highlight-color);
+	padding: inherit;
+	margin-top: 35px;
+	margin-right: auto;
+}
 
 #headlineDate {
 	color: var(--highlight-color)
@@ -102,7 +120,8 @@ canvas {
 }
 
 code {
-	color: var(--headline-color);
+	color: var(--main-bg-color);
+	background-color: var(--headline-color);
 	border-radius: 2px;
 	padding-left: 2px;
 	padding-right: 2px;
