@@ -4,10 +4,6 @@ const logger = require('./logger');
 const helmet = require('helmet');
 const fs = require('fs');
 const https = require('https');
-const http = require('http');
-
-// Detect production or development environment
-const env = process.env.NODE_ENV;
 
 // Load the middleware
 const app = express();
@@ -28,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/feed', (req, res) => {
     console.log('Feed is here');
     const filepath = path.join(__dirname, '../public/rss.xml');
-    fs.readFile(filepath, function(err, data) {
+    fs.readFile(filepath, function (err, data) {
         if (err) {
             response.statusCode = 404;
             return response.end('RSS feed not found or you made an invalid request.');

@@ -7,8 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "node ./scripts/build",
         "dev": "live-server ./public",
-        "serveProd": "NODE_ENV=production node ./server/index.js",
-        "serveDev": "NODE_ENV=development node ./server/index.js",
+        "serve": "node ./server/index.js",
         "newPost": "node ./newPost.js"
     },
     "repository": {
@@ -22,6 +21,11 @@
         "url": "https://github.com/knrdhz/personalspace/issues"
     },
     "homepage": "https://github.com/knrdhz/personalspace#readme",
+    "nodemonConfig": {
+        "ignore": [
+            "public"
+        ]
+    },
     "devDependencies": {
         "chokidar": "^3.0.2",
         "cross-env": "^5.2.0",
