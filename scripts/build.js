@@ -158,7 +158,7 @@ files.forEach((file, i) => {
 			·
 			<a class="footerLink" href="https://github.com/knrdhz">GitHub</a>
 			·
-			<a class="footerLink" href="https://twitter.com/knrdhz">Twitter</a>
+			<a class="footerLink" href="http://www.renegadetribune.com/wp-content/uploads/2018/01/maxresdefault-1.jpg">Twitter</a>
 			·
 			<a class="footerLink" href="https://knrdhz.me/rss.xml">RSS</a>
 		</footer>
