@@ -1,4 +1,4 @@
-const build = require('./scripts/build')
+const build = require('./build')
 async function runProd() {
     await build.start()
 }
