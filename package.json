@@ -4,10 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "node ./scripts/build",
+        "build": "node ./scripts/prod.js",
         "dev": "nodemon ./scripts/devServer.js -e ejs,md,css,js,json",
-        "serve": "node ./server/index.js",
         "newPost": "node ./newPost.js"
     },
     "repository": {
