@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "node ./scripts/build",
-        "dev": "live-server ./public",
+        "dev": "nodemon ./scripts/devServer.js -e ejs,md,css,js,json",
         "serve": "node ./server/index.js",
         "newPost": "node ./newPost.js"
     },
@@ -36,6 +36,7 @@
         "glob": "^7.1.4",
         "helmet": "^3.21.2",
         "live-server": "^1.2.1",
+        "livereload": "^0.9.1",
         "marked": "^0.7.0",
         "minimist": "^1.2.5",
         "nodemon": "^2.0.2",
@@ -43,7 +44,9 @@
         "serve": "^11.1.0"
     },
     "dependencies": {
+        "connect-livereload": "^0.6.1",
         "mkdirp": "^0.5.4",
+        "open": "^8.0.2",
         "rss": "^1.2.2"
     }
 }
