@@ -51,6 +51,7 @@ async function start() {
                 const category = attributes.category
                 const date = new Date(attributes.date)
                 const options = { day: '2-digit', month: '2-digit' }
+                const teaser = pageData.body.split('\n')[0]
 
                 if (title == 'projects' || title == 'contact' || title == 'idea_dump') {
                     return
@@ -69,10 +70,12 @@ async function start() {
                 }
 
                 let headline =
-                    `<h3><a href="${link}"> ${title} ` +
+                    `<span class="headline"><h3><a class="headlineLink" href="${link}"> ${title} ` +
                     '</a> <span id="headlineDate">' +
                     date.toLocaleDateString('en-GB', options) +
-                    '</span></h3>\n'
+                    '</span></h3><div>' +
+                    teaser +
+                    `</div><div><a href=${link}>Read more ▶</a></div></span>`
                 headlines += headline
             }
         })
@@ -93,11 +96,13 @@ async function start() {
             page: pageData.attributes
         })
         let pageContent
+        let teaser
         // generate page content according to file type
         switch (fileData.ext) {
             case '.md':
                 pageContent = marked(pageData.body)
                 console.log('Generating ' + pageData.attributes.title)
+                teaser = pageData.body.split('\n')[0]
                 break
             case '.ejs':
                 pageContent = pageData.body
@@ -172,6 +177,7 @@ async function start() {
             layoutData,
             Object.assign({}, templateConfig, {
                 body: pageContent,
+                teaser: teaser,
                 menuHeader: menuHeader,
                 common: pageContent,
                 headlines: headlines,

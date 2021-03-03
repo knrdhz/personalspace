@@ -1,15 +1,18 @@
 ---
 title: Configuring firewall with NGINX
-date:  2020-01-28
+date: 2020-01-28
 tags:
-- Tutorial
-- Backend
+    - Tutorial
+    - Backend
 layout: layout
 ---
 
-When I was trying to establish a reverse proxy in front of the NodeJS server that runs this very website I followed the common recommendation and decided to use NGINX. I followed the tutorials and documentation, and soon enough I was all happy to test my config and see it rocking on my Raspberry PI. However, I have encountered a problem that I couldn't resolve for quite an embarrassing amount of time. I thought I would share the knowledge here to help other follow the similar use case as smoothly as possible.
+When I was trying to establish a reverse proxy in front of the NodeJS server that runs this very website I accepted the common recommendation and decided to use NGINX. I followed the tutorials and documentation, and soon enough I was all happy to test my config and see it rocking on my Raspberry PI.
+
+However, I have encountered a problem that I couldn't resolve for quite an embarrassing amount of time. I thought I would share the knowledge here to help other follow the similar use case as smoothly as possible.
 
 Basically, my end goal was to establish the following workflow:
+
 1. NodeJS running a server on some arbitrary port (1337, let's say)
 2. NGINX running a reverse proxy with SSL certificates on port 443
 3. NGINX handling port 80 which sole purpose is to redirect the traffic to port 443
@@ -48,6 +51,7 @@ server {
 	# Certificate paths go below
 }
 ```
+
 I have saved the file, ran `nginx -s reload` and... well, port 80 was silent, whereas https:// in front of my website's URL redirected it straight into secure connection workflow.
 
 That was not the scenario I wanted to establish, the HTTP to HTTPS redirect was clearly not working. I have checked the NGINX documentation, local logs, plethora of forums and blogs and could not find a solution.
@@ -75,6 +79,7 @@ Output
     Nginx HTTPS
 	...
 ```
+
 Nginx Full will unlock access both to port 80 and 443, Nginx HTTP will unlock 80 and Nginx HTTPS 443.
 
 2. Run `sudo ufw allow 'Nginx Full'` (or any other option - depending on your needs)

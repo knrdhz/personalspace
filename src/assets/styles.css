@@ -19,7 +19,7 @@ body {
         arial, sans-serif;
     line-height: 1.6;
     color: var(--main-color);
-    max-width: 40rem;
+    max-width: 42rem;
     padding: 2rem;
     margin: auto;
     background: var(--main-bg-color);

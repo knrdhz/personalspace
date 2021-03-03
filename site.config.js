@@ -4,7 +4,7 @@ module.exports = {
         outputPath: './public'
     },
     site: {
-        title: '/knrdhz',
+        title: 'Portmanteau',
         author: 'Konrad Hyzy'
     }
-}
+};
