@@ -28,7 +28,7 @@ async function start() {
     fse.copy(`${srcPath}/assets/_redirects`, `${distPath}/_redirects`)
 
     // read pages
-    const files = glob.sync('**/*.@(md|ejs|html|css)', { cwd: `${srcPath}/pages` })
+    const files = glob.sync('**/*.@(md|ejs|html|css|png)', { cwd: `${srcPath}/pages` })
 
     // keep article list
     let headlines = ''
@@ -83,6 +83,10 @@ async function start() {
     files.forEach((file, i) => {
         const fileData = path.parse(file)
         const destPath = path.join(distPath, fileData.dir)
+        if (fileData.ext === '.png') {
+            fse.copyFileSync(`src/pages/${file}`, `${destPath}/${fileData.base}`)
+            return
+        }
 
         // create destination directory
         fse.mkdirsSync(destPath)
@@ -136,7 +140,6 @@ async function start() {
         const articleDate = date.toLocaleDateString('en-US', options)
 
         // get post category
-
         const articleTags = pageData.attributes.tags
         let formattedArticleTags = ''
         if (articleTags) {
@@ -148,7 +151,6 @@ async function start() {
         let specialStyle = null
         if (pageData.attributes.style) {
             specialStyle = './' + pageData.attributes.style
-            console.log(specialStyle)
         }
 
         /* Generate menu header */
@@ -193,9 +195,9 @@ async function start() {
 
         // save the html file
         if (fileData.ext !== '.css') {
+            console.log(fileData.name)
             fse.writeFileSync(`${destPath}/index.html`, completePage)
         } else {
-            console.log(fileData.base)
             fse.copyFileSync(`src/pages/${file}`, `${destPath}/${fileData.base}`)
         }
     })
