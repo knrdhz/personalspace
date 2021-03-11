@@ -168,3 +168,24 @@ pre {
 .pageHeader {
     text-align: left;
 }
+
+@media screen and (max-width: 800px) {
+    body {
+        max-width: 100vw;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 16px;
+    }
+    .pageHeader > a {
+        display: inline-block;
+        margin: 0;
+        padding: 5px;
+        width: 20%;
+        text-align: center;
+    }
+    #introduction {
+        padding: 0;
+        border: 0;
+    }
+}
