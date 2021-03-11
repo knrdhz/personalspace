@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
 	<link rel="stylesheet" href="./assets/styles.css" type="text/css"></link>
@@ -7,10 +8,12 @@
     <title><%= site.title %></title>
   </head>
   <body>
-	<%- menuHeader %>
-    <%- common %>
-    <%- headlines %>
-	<%- footer %>
+	<div id="mainWindow">
+		<%- menuHeader %>
+		<%- common %>
+		<%- headlines %>
+		<%- footer %>
+	</div>
 	<script>
 		console.log('Hello, World!')
 	</script>

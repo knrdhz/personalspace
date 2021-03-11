@@ -7,12 +7,14 @@
     <title><%= articleTitle %></title>
 </head>
 <body>
-	<%- menuHeader %>
-<section class="main-content">
-	<br><br>
-	<%- body %>
-</section>
-<%- footer %>
+	<div id="mainWindow">
+		<%- menuHeader %>
+		<section class="main-content">
+			<br><br>
+			<%- body %>
+		</section>
+		<%- footer %>
+	</div>
 <script>
 	console.log('Hello, World!')
 </script>

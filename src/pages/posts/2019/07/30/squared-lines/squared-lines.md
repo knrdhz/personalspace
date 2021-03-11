@@ -1,10 +1,11 @@
 ---
 title: Squared Lines
 date: 2019-07-30
-tags: 
-- Generative
-- Art
+tags:
+    - Generative
+    - Art
 layout: layout
+teaser: Commodore 64 classic 10 print code in JS canvas
 ---
 
 First experiments with generative art. A cover of Commodore 64's 10 print. I find it unbelievably interesting to read about the history of such programs. Could you imagine, that the thing below was generated originally by a single one-liner?
@@ -13,7 +14,9 @@ First experiments with generative art. A cover of Commodore 64's 10 print. I fin
 10 PRINT CHR$(205.5+RND(1)); : GOTO 10
 RUN
 ```
+
 <canvas></canvas>
+
 <script>
 var canvas = document.querySelector("canvas");
 var context = canvas.getContext("2d");

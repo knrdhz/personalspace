@@ -1,8 +1,9 @@
 ---
 title: Running NPM scripts from Grunt
-date:  2020-01-07
+date: 2020-01-07
 category: JavaScript
 layout: layout
+teaser: JavaScript task runner Grunt can do more than it seems at the beginning - thanks to the amazing plugins.
 ---
 
 Grunt is a long-standing task runner that is somehow still present on JavaScript scene in 2020. It is somehow damaged by the rising popularity of Webpack, Gulp or Parcel, but still manages to show its capabilities when you need to do something more than just build a library or concatenate files.
@@ -16,15 +17,20 @@ Here's where [grunt-exec](https://www.npmjs.com/package/grunt-exec) plugin comes
 Let's say I want to run an `echo "Hello, world!"` command, here's how to do it:
 
 1. Install `grunt-exec` plugin:
+
 ```sh
 npm i -D grunt-exec
 ```
+
 2. Load it into **Gruntfile.js**:
+
 ```sh
 grunt.loadNpmTasks('grunt-exec');
 ```
+
 3. Update Gruntfile with the string of a command that is to be ran by Grunt:
-```JavaScript
+
+````JavaScript
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
@@ -40,26 +46,25 @@ module.exports = function (grunt) {
 4. Run the new Grunt task from the terminal:
 ```sh
 grunt echo
-```
+````
 
 And that's it! `grunt-exec` has more powerful options to automate plenty of tasks, for example it can `cd` into a subfolder and run `npm install` inside of it:
 
 **Gruntfile.js**
+
 ```javascript
-module.exports = function (grunt) {
+module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-exec')
 
-  grunt.loadNpmTasks('grunt-exec');
+    grunt.initConfig({
+        exec: {
+            echo_something: {
+                cwd: './dependencies_folder/',
+                cmd: 'npm install'
+            }
+        }
+    })
 
-  grunt.initConfig({
-	exec: {
-	  echo_something: {
-		cwd: './dependencies_folder/',
-		cmd: "npm install"
-	  }
-	}
-  });
-
-  grunt.registerTask('installDependencies', [ 'exec:installDependencies' ]);
-
-};
+    grunt.registerTask('installDependencies', ['exec:installDependencies'])
+}
 ```

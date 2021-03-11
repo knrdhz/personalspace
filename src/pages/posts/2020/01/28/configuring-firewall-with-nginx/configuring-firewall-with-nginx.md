@@ -5,6 +5,7 @@ tags:
     - Tutorial
     - Backend
 layout: layout
+teaser: I got blocked and here's the solution I've found. No more bad firewalls breaking your workflow.
 ---
 
 When I was trying to establish a reverse proxy in front of the NodeJS server that runs this very website I accepted the common recommendation and decided to use NGINX. I followed the tutorials and documentation, and soon enough I was all happy to test my config and see it rocking on my Raspberry PI.

@@ -2,9 +2,10 @@
 title: SSH in Depth - History and Overview
 date: 2020-03-30
 tags:
-- Web
-- Internet history
+    - Web
+    - Internet history
 layout: layout
+teaser: I always wanted to find out about the origins of SSH. Might seem obvious, but turns out there were some twists in the story!
 ---
 
 SSH, or Secure Shell, is an internet protocol that many developers consider
@@ -72,6 +73,7 @@ Both of them need to be enabled for SSH (which in practice means using `ssh`
 command in the terminal).
 
 SSH covers three main security areas:
+
 1. Ensuring privacy of communication, which in practice means encrypting the
    connection;
 2. Authenticating client and server machines (making sure that no one who is

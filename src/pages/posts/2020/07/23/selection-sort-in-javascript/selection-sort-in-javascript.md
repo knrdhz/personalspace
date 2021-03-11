@@ -5,6 +5,7 @@ tags:
     - JavaScript
     - Web development
 layout: layout
+teaser: What is a selection sort and how to implement it in JS?
 ---
 
 This article is a part of the series of posts that will explain on how to implement the basic algorithms in JavaScript. It is nothing more than a challenge I set up for myself that would help me understand better the basic logic behind the most famous recipes used in Computer Science field.

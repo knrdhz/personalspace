@@ -9,19 +9,21 @@
 	<link href="<%= specialStyle %>" rel="stylesheet" />
 </head>
 <body>
-	<%- menuHeader %>
-<section class="main-content">
-	<h1><%- headlineTitle %></h1>
-	<h4><%- articleDate %></h4>
-	<div class="tagsWrapper">
-		<%- tags %>
+	<div id="mainWindow">
+		<section class="main-content">
+			<%- menuHeader %>
+			<h1><%- headlineTitle %></h1>
+			<h4><%- articleDate %></h4>
+			<div class="tagsWrapper">
+				<%- tags %>
+			</div>
+			<hr>
+			<%- body %>
+		  <p>
+		  <a class="purple" href="<%= site.basePath %>/" class="btn">◀ Home</a>
+		  <%- footer %>
+		</section>
 	</div>
-	<hr>
-	<%- body %>
-  <p>
-  <a class="purple" href="<%= site.basePath %>/" class="btn">◀ Home</a>
-  <%- footer %>
-</section>
 <script src="../../../../../assets/prism.js"></script>
 <script>
 	console.log('Hello, World!')

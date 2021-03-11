@@ -51,7 +51,7 @@ async function start() {
                 const category = attributes.category
                 const date = new Date(attributes.date)
                 const options = { day: '2-digit', month: '2-digit' }
-                const teaser = pageData.body.split('\n')[0]
+                const teaser = pageData.attributes.teaser || ''
 
                 if (title == 'projects' || title == 'contact' || title == 'idea_dump') {
                     return
@@ -67,15 +67,20 @@ async function start() {
                     yearMarker = '2020'
                     let yearHeadline = `<h2>${yearMarker}</h2>\n`
                     headlines += yearHeadline
+                } else if (date.getFullYear() == 2021 && yearMarker !== '2021') {
+                    yearMarker = '2021'
+                    let yearHeadline = `<h2>${yearMarker}</h2>\n`
+                    headlines += yearHeadline
                 }
 
                 let headline =
-                    `<span class="headline"><h3><a class="headlineLink" href="${link}"> ${title} ` +
-                    '</a> <span id="headlineDate">' +
-                    date.toLocaleDateString('en-GB', options) +
-                    '</span></h3><div>' +
+                    `<span class="headline"><h3><a class="headlineLink" href="${link}"> ${title} <span class="headlineDate">${date.toLocaleDateString(
+                        'en-GB',
+                        options
+                    )}<span>` +
+                    '</a></h3><div class="headlineTeaser">' +
                     teaser +
-                    `</div><div><a href=${link}>Read more ▶</a></div></span>`
+                    `</div></span>`
                 headlines += headline
             }
         })
@@ -106,7 +111,7 @@ async function start() {
             case '.md':
                 pageContent = marked(pageData.body)
                 console.log('Generating ' + pageData.attributes.title)
-                teaser = pageData.body.split('\n')[0]
+                teaser = pageData.attributes.teaser || ''
                 break
             case '.ejs':
                 pageContent = pageData.body
@@ -156,10 +161,10 @@ async function start() {
         /* Generate menu header */
         const menuHeader = `
 		<section class="pageHeader">
-		  <a href="/" class="green">home</a>
-		  <a href="/projects" class="green">projects</a>
-		  <a href="/idea-dump" class="green">ideaDump</a>
-		  <a href="/contact" class="green">contact</a>
+		  <a href="/" class="button">home</a>
+		  <a href="/projects" class="button">projects</a>
+		  <a href="/idea-dump" class="button">ideaDump</a>
+		  <a href="/contact" class="button">contact</a>
 		</section>
 		`
         const footer = `

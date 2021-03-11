@@ -2,10 +2,11 @@
 title: Game of Life
 date: 2020-04-28
 tags:
-- Generative
-- Algorithms
+    - Generative
+    - Algorithms
 layout: layout
 style: game-of-life.css
+teaser: I have implemented Game of Life as a tribute to late John Conway
 ---
 
 <div id="container">
@@ -19,9 +20,10 @@ style: game-of-life.css
 </div>
 
 Earlier this month a great mathematician [John Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) passed away due to COVID-19. Since few months (years) I wanted to implement his famous Game of Life. It is a cellular automation that is based on the initial state (therefore it's called a zero-player game). Here's a quick recap of the rules:
-- It takes place on an infinite 2D grid
-- Each square represents a cell
-- Each cell can represent one of two states: alive or dead
+
+-   It takes place on an infinite 2D grid
+-   Each square represents a cell
+-   Each cell can represent one of two states: alive or dead
 
 Now, the lifecycle of the cells is defined by strict rules that define whether it will survive the next turn (generation). They are quite simple but provide the game with unexpected results and shapes. I will just copy-paste them here from [Game of Life Wikipedia page](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life):
 
@@ -30,7 +32,7 @@ Now, the lifecycle of the cells is defined by strict rules that define whether i
 3. Any live cell with more than three live neighbours dies, as if by overpopulation.
 4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-Here's a basic (and highly inefficient) implementation of Conways's **Game of Life**. It is based on a grid of divs representing the cells. It is surprisingly small, as in this particular implementation each generation starts with a thorough check of every single cell (and there are 400 of them!). Click some squares to make the cells 'alive' and press the start button. 
+Here's a basic (and highly inefficient) implementation of Conways's **Game of Life**. It is based on a grid of divs representing the cells. It is surprisingly small, as in this particular implementation each generation starts with a thorough check of every single cell (and there are 400 of them!). Click some squares to make the cells 'alive' and press the start button.
 
 <script>
 const grid = {};

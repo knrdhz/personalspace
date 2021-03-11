@@ -5,6 +5,7 @@ tags:
     - JavaScript
     - Web development
 layout: layout
+teaser: What is asynchronous code and what problems do callbacks solve?
 ---
 
 In order to grasp all the Promises, asyncs and awaits that modern JavaScript is sugared with, first we need to answer few basic questions: what is asynchronous code and what problems does it solve?

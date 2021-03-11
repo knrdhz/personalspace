@@ -2,14 +2,16 @@
 title: Joy Division
 date: 2019-07-31
 tags:
-- Generative
-- Art
+    - Generative
+    - Art
 layout: layout
+teaser: Coming straight from album cover and millions of t-shirts to your browser
 ---
 
 Yet another take on the classics of the generative art. Inspired by the Joy Division's classical album art.
 
 <canvas></canvas>
+
 <script>
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
